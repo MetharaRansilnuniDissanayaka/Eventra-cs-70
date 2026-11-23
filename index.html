@@ -433,6 +433,8 @@
 
 
 
+
+
 </main>
 
 <footer>
@@ -458,8 +460,8 @@
     </div>
 </footer>
 
-
-/* ---------- Theme switch ---------- */
+        <script>
+        /* ---------- Theme switch ---------- */
 const root = document.documentElement, toggle = document.getElementById('themeToggle');
 function setTheme(t){
 root.setAttribute('data-theme', t);
@@ -487,16 +489,7 @@ setTheme(root.getAttribute('data-theme'));
 
 
 
-<script>
-    /* ---------- Theme switch ---------- */
-    const root = document.documentElement, toggle = document.getElementById('themeToggle');
-    function setTheme(t){
-    root.setAttribute('data-theme', t);
-    toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-    try { localStorage.setItem('ep-theme', t); } catch(e) {}
-    }
-    toggle.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
-    setTheme(root.getAttribute('data-theme'));
+
 
 
 
