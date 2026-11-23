@@ -24,7 +24,37 @@
             document.documentElement.setAttribute('data-theme',t)})();
     </script>
     <style>
+        :root{
+            --bg:#ffffff; --bg2:#fff1f2; --card:#ffffff; --ink:#2b1216; --mute:#6e4a50; --line:#efcdd1;
+            --btn:#d90429; --btn-hover:#b80322; --accent:#c1021f; --band:#c1021f;
+            --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+            --body:'Figtree','Segoe UI',system-ui,sans-serif;
+        }
+        :root[data-theme="dark"]{
+            --bg:#1b0e11; --bg2:#26141a; --card:#2a171d; --ink:#fdeeee; --mute:#d4adb2; --line:#52303a;
+            --btn:#e11d3a; --btn-hover:#f23a54; --accent:#ff6f7e; --band:#8f0b22;
+        }
+        *{box-sizing:border-box;margin:0}
+        html{scroll-behavior:smooth;scroll-padding-top:76px}
+        body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6;font-size:1.0625rem;transition:background .25s,color .25s}
+        img,svg{max-width:100%}
+        a{color:inherit}
+        .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+        :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+        h1,h2,h3{font-family:var(--head);line-height:1.08;letter-spacing:-.02em}
+        h1{font-size:clamp(2.6rem,6.2vw,4.6rem);font-weight:800}
+        h2{font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:700;max-width:20ch}
+        h3{font-size:1.3rem;font-weight:700}
+        p.lead{font-size:1.2rem;color:var(--mute);max-width:46ch}
+        section{padding:5.5rem 0}
 
+        /* Buttons */
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:600 1rem var(--body);padding:.85rem 1.5rem;border-radius:999px;border:2px solid var(--btn);background:var(--btn);color:#fff;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s}
+        .btn:hover{background:var(--btn-hover);border-color:var(--btn-hover)}
+        .btn:active{transform:scale(.98)}
+        .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+        .btn.ghost:hover{border-color:var(--btn);background:transparent}
+        .btn.small{padding:.55rem 1.1rem;font-size:.95rem}
 
 
 
@@ -158,6 +188,8 @@
 
 
 
+        .skip{position:absolute;left:-9999px;top:0;z-index:50;background:var(--btn);color:#fff;padding:.7rem 1rem;border-radius:0 0 10px 0}
+        .skip:focus{left:0}
 
 
 
